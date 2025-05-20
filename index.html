@@ -1,104 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chhayansh Sahu | Game Developer</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="images/retro_icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Portfolio | Unity Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CRITICAL CSS (INLINED FOR FASTER LOAD) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0a0a20;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
-  <nav class="navbar">
-    <h1>Chhayansh Sahu</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m Chhayansh, a passionate game developer who builds immersive, story-driven games using Unity and Blender. I love combining logic, art, and code to create engaging virtual experiences. Whether it’s a horror game or a historical RTS, I bring ideas to life with creativity and teamwork.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="projects-container">
-      <!-- Aksa Card -->
-      <div class="card">
-        <h3>Aksa</h3>
-        <figure>
-          <img src="images/aksa1.png" alt="Aksa Screenshot 1">
-        </figure>
-        <div class="card-content">
-          <ul>
-            <li>3D psychological horror game made for IIT Roorkee Game Jam</li>
-            <li>Built with Unity 3D and C#</li>
-            <li>Collaborated in a team using GitHub</li>
-            <li>Finalist entry among multiple submissions</li>
-          </ul>
-          <figure>
-            <img src="images/aksa2.png" alt="Aksa Screenshot 2">
-            <figcaption>UI/UX</figcaption>
-          </figure>
-          <figure>
-            <video controls>
-              <source src="videos/aksa-preview.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption>Gameplay Preview</figcaption>
-          </figure>
+    <!-- Simplified Navigation -->
+    <nav class="cyber-nav">
+        <div class="container">
+            <a href="#home" class="neon-logo">CHHAYANSH</a>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <div class="hamburger"></div>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#projects" class="neon-link">PROJECTS</a></li>
+                <li><a href="#skills" class="neon-link">SKILLS</a></li>
+                <li><a href="#about" class="neon-link">ABOUT</a></li>
+            </ul>
         </div>
-      </div>
+    </nav>
 
-      <!-- Sauratha Card -->
-      <div class="card">
-        <h3>Sauratha</h3>
-        <figure>
-          <img src="images/sauratha-weapons.png" alt="Sauratha Weapons Models">
-        </figure>
-        <div class="card-content">
-          <ul>
-            <li>RTS game inspired by Shivaji Maharaj's empire</li>
-            <li>Features fort upgrades, army training, resource collection</li>
-            <li>Dialogue system for in-game communication</li>
-            <li>Custom 3D assets like weapons and buildings</li>
-          </ul>
-          <figure>
-            <video controls>
-              <source src="videos/sauratha-dialogue.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <figcaption>Dialogue System</figcaption>
-          </figure>
+    <!-- Hero Section (Optimized) -->
+    <section id="home" class="cyber-hero">
+        <div class="container">
+            <h1 class="neon-text">GAME DEVELOPER</h1>
+            <p class="typing-text" data-text="UNITY | BLENDER | C# | 3D ART"></p>
+            <div class="hero-buttons">
+                <a href="#projects" class="cyber-btn">VIEW WORK</a>
+                <a href="https://github.com/Chhayanshsahu" target="_blank" class="cyber-btn outline">GITHUB</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>
-        <img src="images/phone.png" alt="Phone" class="icon"> 8819003026
-      </p>
-      <p>
-        <img src="images/gmail.png" alt="Email" class="icon">
-        <a href="mailto:chhayanshsahu16@gmail.com">chhayanshsahu16@gmail.com</a>
-      </p>
-      <p>
-        <img src="images/linkedin.png" alt="LinkedIn" class="icon">
-        <a href="https://www.linkedin.com/in/chhayansh-sahu-9bb845295" target="_blank">
-          LinkedIn Profile
-        </a>
-      </p>
-    </div>
-  </section>
+    <!-- Projects Section (Lazy Load) -->
+    <section id="projects" class="cyber-section">
+        <div class="container">
+            <h2 class="section-title"><span>PROJECTS</span></h2>
+            <div class="project-grid">
+                <!-- Project 1 (Optimized Video) -->
+                <div class="cyber-card">
+                    <div class="card-media">
+                        <img src="images/aksa1.png" data-src="images/aksa2.png" alt="Aksa" class="lazy">
+                        <div class="card-overlay">
+                            <h3>AKSA</h3>
+                            <div class="tech-tags">
+                                <span>UNITY</span>
+                                <span>C#</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://github.com/Chhayanshsahu/TeamVyau" class="cyber-btn small">
+                            <i class="fab fa-github" aria-hidden="true"></i> CODE
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="cyber-card">
+                    <div class="card-media">
+                        <img src="images/sauratha-weapons.png" data-src="images/sauratha-weapons.png" alt="Sauratha" class="lazy">
+                        <div class="card-overlay">
+                            <h3>Sauratha</h3>
+                            <div class="tech-tags">
+                                <span>UNITY</span>
+                                <span>SHADERS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-buttons">
+                        <a href="https://github.com/Chhayanshsahu" class="cyber-btn small">
+                            <i class="fab fa-github" aria-hidden="true"></i> CODE
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Skills Section -->
+    <section id="skills" class="cyber-section">
+        <div class="container">
+            <h2 class="section-title"><span>SKILLS</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-gamepad" aria-hidden="true"></i> GAME DEV</h3>
+                    <div class="skill">
+                        <span>UNITY ENGINE</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>C# PROGRAMMING</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-cube" aria-hidden="true"></i> 3D ART</h3>
+                    <div class="skill">
+                        <span>BLENDER</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>3D MODELING</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Text Only) -->
+    <section id="about" class="cyber-section">
+        <div class="container">
+            <h2 class="section-title"><span>ABOUT</span></h2>
+            <div class="about-text">
+                <p>I'm a <strong>Unity Developer</strong> specializing in game mechanics and performance optimization. My focus is on clean architecture and immersive gameplay.</p>
+                <p>Technical skills:</p>
+                <ul class="skills-list">
+                    <li>5+ years Unity experience</li>
+                    <li>Advanced C# programming</li>
+                    <li>Blender 3D modeling</li>
+                    <li>Shader development</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://github.com/Chhayanshsahu" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optimized JavaScript -->
+    <script>
+        // Load non-critical CSS
+        function loadCSS() {
+            var css = document.createElement('link');
+            css.rel = 'stylesheet';
+            css.href = 'styles.css';
+            document.head.appendChild(css);
+        }
+        if (window.requestIdleCallback) {
+            requestIdleCallback(loadCSS);
+        } else {
+            setTimeout(loadCSS, 500);
+        }
+
+        // Load Font Awesome async
+        var fa = document.createElement('link');
+        fa.rel = 'stylesheet';
+        fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+        fa.media = 'print';
+        fa.onload = function() { this.media='all' };
+        document.head.appendChild(fa);
+    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
