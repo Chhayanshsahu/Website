@@ -3,195 +3,911 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberpunk Portfolio | Unity Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>CS - Chhayansh Sahu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== CRITICAL CSS (INLINED FOR FASTER LOAD) ===== */
+        /* Cyberpunk Theme */
+        :root {
+            --neon-pink: #ff2a6d;
+            --neon-blue: #05d9e8;
+            --neon-purple: #d300c5;
+            --dark-bg: #0d0221;
+            --darker-bg: #05010a;
+            --text-primary: #d1f7ff;
+            --text-secondary: #a5b4fc;
+            --glow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: #0a0a20;
-            color: #ffffff;
-            overflow-x: hidden;
+            font-family: 'Rajdhani', 'Courier New', monospace;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
             line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                linear-gradient(rgba(5, 217, 232, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(5, 217, 232, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
-        .container {
-            width: 90%;
+
+        @font-face {
+            font-family: 'Rajdhani';
+            src: url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap');
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: var(--darker-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--neon-pink);
+            border-radius: 10px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(13, 2, 33, 0.9);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--neon-blue);
+            box-shadow: var(--glow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--neon-blue);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 42, 109, 0.1) 0%, rgba(13, 2, 33, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+            text-shadow: var(--glow);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        .tagline {
+            display: inline-block;
+            border: 1px solid var(--neon-pink);
+            padding: 0.5rem 1rem;
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 2rem;
+            background-color: var(--darker-bg);
+            border-top: 1px solid rgba(5, 217, 232, 0.2);
+            border-bottom: 1px solid rgba(5, 217, 232, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--neon-blue);
+            text-shadow: var(--glow);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(5, 1, 10, 0.7);
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            border-radius: 5px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(5, 217, 232, 0.1), transparent);
+            transition: all 0.6s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(5, 217, 232, 0.3);
+            border-color: var(--neon-blue);
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-code {
+            background-color: transparent;
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+        }
+
+        .btn-code:hover {
+            background-color: rgba(5, 217, 232, 0.2);
+            text-shadow: 0 0 5px var(--neon-blue);
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+        }
+
+        .btn-more {
+            background-color: transparent;
+            color: var(--neon-pink);
+            border: 1px solid var(--neon-pink);
+        }
+
+        .btn-more:hover {
+            background-color: rgba(255, 42, 109, 0.2);
+            text-shadow: 0 0 5px var(--neon-pink);
+            box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-text {
+            margin-top: 2rem;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category h4 {
+            color: var(--neon-purple);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-category h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--neon-purple), transparent);
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 0.7rem;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .skill-category li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-blue);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 2rem;
+            background-color: var(--darker-bg);
+            border-top: 1px solid rgba(5, 217, 232, 0.2);
+        }
+
+        .contact-info {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--neon-blue);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--neon-pink);
+            text-shadow: 0 0 5px var(--neon-pink);
+        }
+
+        .contact-icon {
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: var(--neon-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(5, 217, 232, 0.1);
+        }
+
+        /* Modal - Fixed Video Size */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        .modal-content {
+            background-color: var(--darker-bg);
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--neon-pink);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            color: var(--neon-blue);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-shadow: var(--glow);
+        }
+
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @media (min-width: 992px) {
+            .modal-body {
+                flex-direction: row;
+            }
+        }
+
+        .project-media {
+            flex: 1;
+            min-width: 0; /* Fixes flexbox overflow issue */
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            border: 1px solid var(--neon-blue);
+            border-radius: 3px;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .screenshots img {
+            width: 100%;
+            border-radius: 3px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid rgba(5, 217, 232, 0.3);
+        }
+
+        .screenshots img:hover {
+            transform: scale(1.05);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 10px rgba(5, 217, 232, 0.5);
+        }
+
+        .project-details {
+            flex: 1;
+        }
+
+        .project-details h3 {
+            color: var(--neon-purple);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-details p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .tech-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-list li {
+            background-color: rgba(5, 217, 232, 0.1);
+            color: var(--neon-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--neon-blue);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-modal {
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-body {
+                flex-direction: column;
+            }
+
+            .video-container video {
+                max-height: 250px;
+            }
+        }
+
+        /* Cyberpunk scanline effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%
+            );
+            background-size: 100% 2px;
+            pointer-events: none;
+            z-index: 10000;
+            animation: scanline 6s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 100%;
+            }
         }
     </style>
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
 </head>
 <body>
-    <!-- Simplified Navigation -->
-    <nav class="cyber-nav">
-        <div class="container">
-            <a href="#home" class="neon-logo">CHHAYANSH</a>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <div class="hamburger"></div>
-            </button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">CS</div>
             <ul class="nav-links">
-                <li><a href="#projects" class="neon-link">PROJECTS</a></li>
-                <li><a href="#skills" class="neon-link">SKILLS</a></li>
-                <li><a href="#about" class="neon-link">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section (Optimized) -->
-    <section id="home" class="cyber-hero">
-        <div class="container">
-            <h1 class="neon-text">GAME DEVELOPER</h1>
-            <p class="typing-text" data-text="UNITY | BLENDER | C# | 3D ART"></p>
-            <div class="hero-buttons">
-                <a href="#projects" class="cyber-btn">VIEW WORK</a>
-                <a href="https://github.com/Chhayanshsahu" target="_blank" class="cyber-btn outline">GITHUB</a>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Chhayansh<br> Sahu</h1>
+            <span class="tagline">Unity</span>
+            <span class="tagline">Blender</span>
+            <p>100% bug-free (for the first 3 seconds).</p>
         </div>
     </section>
 
-    <!-- Projects Section (Lazy Load) -->
-    <section id="projects" class="cyber-section">
-        <div class="container">
-            <h2 class="section-title"><span>PROJECTS</span></h2>
-            <div class="project-grid">
-                <!-- Project 1 (Optimized Video) -->
-                <div class="cyber-card">
-                    <div class="card-media">
-                        <img src="images/aksa1.png" data-src="images/aksa2.png" alt="Aksa" class="lazy">
-                        <div class="card-overlay">
-                            <h3>AKSA</h3>
-                            <div class="tech-tags">
-                                <span>UNITY</span>
-                                <span>C#</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://github.com/Chhayanshsahu/TeamVyau" class="cyber-btn small">
-                            <i class="fab fa-github" aria-hidden="true"></i> CODE
-                        </a>
-                    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>AKSA</h3>
+                <p class="project-description"> A psychological horror FPS where the player wakes up trapped in a building that's actually his mind. Solve symbolic puzzles to escape heartbreak and move on.</p>
+                <div class="project-buttons">
+                    <a href="#" class="btn btn-code">VIEW CODE</a>
+                    <button class="btn btn-more see-more" data-project="1">SEE MORE</button>
                 </div>
-                
-                <!-- Project 2 -->
-                <div class="cyber-card">
-                    <div class="card-media">
-                        <img src="images/sauratha-weapons.png" data-src="images/sauratha-weapons.png" alt="Sauratha" class="lazy">
-                        <div class="card-overlay">
-                            <h3>Sauratha</h3>
-                            <div class="tech-tags">
-                                <span>UNITY</span>
-                                <span>SHADERS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-buttons">
-                        <a href="https://github.com/Chhayanshsahu" class="cyber-btn small">
-                            <i class="fab fa-github" aria-hidden="true"></i> CODE
-                        </a>
-                    </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>Sauratha</h3>
+                <p class="project-description">A historical RTS prototype where players will one day live the life of Maharana Pratap.</p>
+                <div class="project-buttons">
+                    <a href="#" class="btn btn-code">VIEW CODE</a>
+                    <button class="btn btn-more see-more" data-project="2">SEE MORE</button>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>Endless Runner</h3>
+                <p class="project-description">A fast-paced 2D endless runner game where you dodge obstacles, collect points, and see how far your reflexes can take you.</p>
+                <div class="project-buttons">
+                    <a href="#" class="btn btn-code">VIEW CODE</a>
+                    <button class="btn btn-more see-more" data-project="3">SEE MORE</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="cyber-section">
-        <div class="container">
-            <h2 class="section-title"><span>SKILLS</span></h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-gamepad" aria-hidden="true"></i> GAME DEV</h3>
-                    <div class="skill">
-                        <span>UNITY ENGINE</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>C# PROGRAMMING</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="85%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3><i class="fas fa-cube" aria-hidden="true"></i> 3D ART</h3>
-                    <div class="skill">
-                        <span>BLENDER</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <span>3D MODELING</span>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="80%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section (Text Only) -->
-    <section id="about" class="cyber-section">
-        <div class="container">
-            <h2 class="section-title"><span>ABOUT</span></h2>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2 class="section-title">ABOUT</h2>
+        <div class="about-content">
             <div class="about-text">
-                <p>I'm Chhayansh sahu a <strong>Unity Developer</strong> specializing in game mechanics and performance optimization. My focus is on clean architecture and immersive gameplay.</p>
-                <p>Technical skills:</p>
-                <ul class="skills-list">
-                    <li>2+ years Unity experience</li>
-                    <li>Advanced C# programming</li>
-                    <li>Blender 3D modeling</li>
-                </ul>
-                <div class="social-links">
-                    <a href="https://github.com/Chhayanshsahu" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/chhayansh-sahu-9bb845295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                    </a>
+                <p>Hey, I'm Chhayansh Sahu — game dev by passion, engineer by degree, and bug fixer by necessity. I build games in Unity, model stuff in Blender, and occasionally survive hackathons on caffeine and chaos.
+
+Currently turning wild ideas into playable chaos, one bug at a time. 🎮
+
+.</p>
+                
+                <h3>SKILLS</h3>
+                <div class="skills">
+                    <div class="skill-category">
+                        <h4>PROGRAMMING</h4>
+                        <ul>
+                            <li>Unity/C#</li>
+                            <li>Shader Programming</li>
+                            <li>AI Systems</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>DESIGN</h4>
+                        <ul>
+                            <li>Level Design</li>
+                            <li>UI/UX</li>
+                            <li>Narrative Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>ART</h4>
+                        <ul>
+                            <li>Pixel Art</li>
+                            <li>3D Modeling</li>
+                            <li>Animation</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Optimized JavaScript -->
-    <script>
-        // Load non-critical CSS
-        function loadCSS() {
-            var css = document.createElement('link');
-            css.rel = 'stylesheet';
-            css.href = 'styles.css';
-            document.head.appendChild(css);
-        }
-        if (window.requestIdleCallback) {
-            requestIdleCallback(loadCSS);
-        } else {
-            setTimeout(loadCSS, 500);
-        }
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="contact-info">
+            <div class="contact-list">
+                <a href="https://github.com/Chhayanshsahu" class="contact-item" target="_blank">
+                    <i class="fas fa-code-branch contact-icon"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/chhayansh-sahu-9bb845295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="contact-item" target="_blank">
+                    <i class="fab fa-linkedin contact-icon"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-mobile-alt contact-icon"></i>
+                    <span> 8819003026 </span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <span>chhayanshsahu16@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Load Font Awesome async
-        var fa = document.createElement('link');
-        fa.rel = 'stylesheet';
-        fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-        fa.media = 'print';
-        fa.onload = function() { this.media='all' };
-        document.head.appendChild(fa);
+    <!-- Footer -->
+    <footer>
+        <p>&copy; All rights reserved. Designed with cyberpunk spirit.</p>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title" id="modal-title">AKSA</h2>
+            <div class="modal-body">
+                <div class="project-media">
+                    <div class="video-container">
+                        <!-- Video will be inserted here by JavaScript -->
+                    </div>
+                    <div class="screenshots">
+                        <!-- Screenshots will be inserted here -->
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>PROJECT DETAILS</h3>
+                    <p id="project-description"></p>
+                    
+                    <h3>TECHNOLOGIES USED</h3>
+                    <ul class="tech-list" id="project-technologies"></ul>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-code">VIEW CODE</a>
+                        <a href="#" class="btn btn-more">PLAY DEMO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Project modals
+            const seeMoreButtons = document.querySelectorAll('.see-more');
+            const modal = document.getElementById('project-modal');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // Project data
+            const projects = {
+                1: {
+                    title: "AKSA",
+                    description: "A psychological horror FPS where the player wakes up trapped in a building that's actually his mind. Solve symbolic puzzles to escape heartbreak and move on.",
+                    technologies: ["Unity", "C#", "Shader Graph"],
+                    codeLink: "https://github.com/Chhayanshsahu/TeamVyau",
+                    demoLink: "#",
+                    video: '<video controls><source src="videos/aksa.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>',
+                    screenshots: [
+                        "images/aksa1.png",
+                        "https://via.placeholder.com/400x225/0d0221/05d9e8?text=SCREENSHOT+2"
+                    ]
+                },
+                2: {
+                    title: "Sauratha",
+                    description: "A historical RTS prototype where players will one day live the life of Maharana Pratap.",
+                    technologies: ["Unity", "C#", "AI Systems"],
+                    codeLink: "#",
+                    demoLink: "#",
+                    video: '<video controls><source src="videos/sauratha.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>',
+                    screenshots: [
+                        "https://via.placeholder.com/400x225/0d0221/05d9e8?text=SCREENSHOT+1",
+                        "https://via.placeholder.com/400x225/0d0221/ff2a6d?text=SCREENSHOT+2"
+                    ]
+                },
+                3: {
+                    title: "Endless Runner",
+                    description: "A fast-paced 2D endless runner game where you dodge obstacles, collect points, and see how far your reflexes can take you.",
+                    technologies: ["Unity", "C#", "2D Physics"],
+                    codeLink: "#",
+                    demoLink: "#",
+                    video: '<video controls><source src="videos/runner.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>',
+                    screenshots: [
+                        "https://via.placeholder.com/400x225/0d0221/05d9e8?text=SCREENSHOT+1",
+                        "https://via.placeholder.com/400x225/0d0221/ff2a6d?text=SCREENSHOT+2"
+                    ]
+                }
+            };
+
+            seeMoreButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const projectId = button.dataset.project;
+                    const project = projects[projectId];
+                    
+                    // Update modal content
+                    document.getElementById('modal-title').textContent = project.title;
+                    document.getElementById('project-description').textContent = project.description;
+                    
+                    const technologiesList = document.getElementById('project-technologies');
+                    technologiesList.innerHTML = '';
+                    project.technologies.forEach(tech => {
+                        const li = document.createElement('li');
+                        li.textContent = tech;
+                        technologiesList.appendChild(li);
+                    });
+                    
+                    // Update video
+                    const videoContainer = document.querySelector('.video-container');
+                    videoContainer.innerHTML = project.video;
+                    
+                    // Update screenshots
+                    const screenshotsContainer = document.querySelector('.screenshots');
+                    screenshotsContainer.innerHTML = '';
+                    project.screenshots.forEach(screenshot => {
+                        const img = document.createElement('img');
+                        img.src = screenshot;
+                        img.alt = `${project.title} screenshot`;
+                        screenshotsContainer.appendChild(img);
+                    });
+                    
+                    // Update links
+                    const codeLink = document.querySelector('.project-links .btn-code');
+                    const demoLink = document.querySelector('.project-links .btn-more');
+                    codeLink.href = project.codeLink;
+                    demoLink.href = project.demoLink;
+                    
+                    // Show modal
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Cyberpunk terminal-like text effect
+            const heroText = document.querySelector('.hero h1');
+            const originalText = heroText.textContent;
+            heroText.textContent = '';
+            
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                if (i < originalText.length) {
+                    heroText.textContent += originalText.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingEffect);
+                }
+            }, 100);
+        });
     </script>
-    <script src="script.js" defer></script>
 </body>
 </html>
