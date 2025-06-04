@@ -1,128 +1,81 @@
+// Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle
-    const themeToggle = document.querySelector('.theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        document.body.dataset.theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-        const icon = themeToggle.querySelector('i');
-        icon.className = document.body.dataset.theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
     });
+  });
 
-    // Project modals
-    const seeMoreButtons = document.querySelectorAll('.see-more');
-    const modal = document.getElementById('project-modal');
-    const closeModal = document.querySelector('.close-modal');
-    
-    // Sample project data - replace with your actual projects
-    const projects = {
-        1: {
-            title: "PROJECT 1",
-            description: "Detailed description of Project 1. Explain the game concept, your role in development, and any interesting technical challenges you overcame.",
-            technologies: ["Unity", "C#", "Shader Graph", "AI Pathfinding"],
-            codeLink: "https://github.com/Chhayanshsahu/TeamVyau",
-            demoLink: "#",
-            video: `
-            <video controls>
-                <source src="videos/aksa.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-        `,
-            screenshots: [
-                "images/aksa1.png",
-                "screenshot2.jpg",
-                "screenshot3.jpg",
-                "screenshot4.jpg"
-            ]
-        },
-        2: {
-            title: "PROJECT 2",
-            description: "Detailed description of Project 2.",
-            technologies: ["Unreal Engine", "C++", "Blueprints"],
-            codeLink: "#",
-            demoLink: "#",
-            video: "<iframe src='your-video-url' frameborder='0' allowfullscreen></iframe>",
-            screenshots: [
-                "screenshot1.jpg",
-                "screenshot2.jpg"
-            ]
-        },
-        3: {
-            title: "PROJECT 3",
-            description: "Detailed description of Project 3.",
-            technologies: ["Godot", "GDScript", "Pixel Art"],
-            codeLink: "#",
-            demoLink: "#",
-            video: "<iframe src='your-video-url' frameborder='0' allowfullscreen></iframe>",
-            screenshots: [
-                "screenshot1.jpg",
-                "screenshot2.jpg",
-                "screenshot3.jpg"
-            ]
-        }
-    };
+  // Project Modals
+  const modalBtns = document.querySelectorAll('.project-btn');
+  const modals = document.querySelectorAll('.modal');
+  const closeBtns = document.querySelectorAll('.close');
 
-    seeMoreButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const projectId = button.dataset.project;
-            const project = projects[projectId];
-            
-            // Update modal content
-            document.getElementById('modal-title').textContent = project.title;
-            document.getElementById('project-description').textContent = project.description;
-            
-            const technologiesList = document.getElementById('project-technologies');
-            technologiesList.innerHTML = '';
-            project.technologies.forEach(tech => {
-                const li = document.createElement('li');
-                li.textContent = tech;
-                technologiesList.appendChild(li);
-            });
-            
-            document.getElementById('project-code-link').href = project.codeLink;
-            document.getElementById('project-live-link').href = project.demoLink;
-            
-            // Add video
-            const videoContainer = document.querySelector('.video-container');
-            videoContainer.innerHTML = project.video;
-            
-            // Add screenshots
-            const screenshotsContainer = document.querySelector('.screenshots');
-            screenshotsContainer.innerHTML = '';
-            project.screenshots.forEach(screenshot => {
-                const img = document.createElement('img');
-                img.src = screenshot;
-                img.alt = `${project.title} screenshot`;
-                screenshotsContainer.appendChild(img);
-            });
-            
-            // Show modal
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        });
+  modalBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const projectId = btn.getAttribute('data-project');
+      document.getElementById(`${projectId}-modal`).style.display = 'block';
     });
+  });
 
-    closeModal.addEventListener('click', () => {
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    modals.forEach(modal => {
+      if (e.target === modal) {
         modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+      }
     });
+  });
 
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
+  // Copy phone number
+  const phone = document.querySelector('.contact-info p:first-child');
+  phone.addEventListener('click', () => {
+    navigator.clipboard.writeText('+91 8819003026');
+    const originalText = phone.textContent;
+    phone.textContent = 'Copied to clipboard!';
+    setTimeout(() => {
+      phone.textContent = originalText;
+    }, 2000);
+  });
+});
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
+// Fullscreen Screenshots
+document.querySelectorAll('.project-gallery img').forEach(img => {
+  img.addEventListener('click', () => {
+    const fullscreen = document.createElement('div');
+    fullscreen.style.position = 'fixed';
+    fullscreen.style.top = '0';
+    fullscreen.style.left = '0';
+    fullscreen.style.width = '100vw';
+    fullscreen.style.height = '100vh';
+    fullscreen.style.backgroundColor = 'rgba(0,0,0,0.9)';
+    fullscreen.style.display = 'flex';
+    fullscreen.style.justifyContent = 'center';
+    fullscreen.style.alignItems = 'center';
+    fullscreen.style.zIndex = '3000';
+    fullscreen.style.cursor = 'zoom-out';
+
+    const fullscreenImg = document.createElement('img');
+    fullscreenImg.src = img.src;
+    fullscreenImg.style.maxWidth = '90%';
+    fullscreenImg.style.maxHeight = '90%';
+    fullscreenImg.style.objectFit = 'contain';
+
+    fullscreen.appendChild(fullscreenImg);
+    document.body.appendChild(fullscreen);
+
+    fullscreen.addEventListener('click', () => {
+      document.body.removeChild(fullscreen);
     });
+  });
+
 });
