@@ -1,180 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chhayansh Sahu | Game Dev Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhayansh Sahu | Futuristic Game Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Quick Navigation -->
-  <header>
-    <nav>
-      <div class="logo">CS</div>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="files/ChhayanshSahu_Resume.pdf" class="logo">CS</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
     </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>CODE. PLAY. REPEAT.</h1>
-      <h2>Hi, I'm <span>Chhayansh Sahu</span></h2>
-      <p>Game Dev | Unity Engineer | Chaos Tamer</p>
-      <a href="#projects" class="btn">View Projects →</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h3><i class="fas fa-gamepad"></i> About Me</h3>
-    <p>Hey, I'm Chhayansh Sahu — game dev by passion, engineer by degree, and bug fixer by necessity. I build games in Unity, model stuff in Blender, and occasionally survive hackathons on caffeine and chaos.</p>
-    <p>Currently turning wild ideas into playable chaos, one bug at a time. <i class="fas fa-bug"></i></p>
-    <ul>
-      <li><strong>🔧 Tools I Wrestle With:</strong> Unity, Blender, C#, Shader Graph.</li>
-      <li><strong>🚀 Current Quest:</strong> Building immersive worlds & optimizing spaghetti code.</li>
-      <li><strong>⚡ Fun Fact:</strong> I once fixed a game-breaking bug in my sleep (probably).</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Skill -->
-<section id="skills" class="skills">
-  <h3><i class="fas fa-code"></i> Skills</h3>
-  <div class="skills-grid">
-    <div class="skill">
-      <h4>Unity</h4>
-      <div class="skill-bar"><span class="bar unity-bar"></span></div>
-    </div>
-    <div class="skill">
-      <h4>C#</h4>
-      <div class="skill-bar"><span class="bar csharp-bar"></span></div>
-    </div>
-    <div class="skill">
-      <h4>Blender</h4>
-      <div class="skill-bar"><span class="bar blender-bar"></span></div>
-    </div>
-    <div class="skill">
-      <h4>Shader Graph</h4>
-      <div class="skill-bar"><span class="bar shadergraph-bar"></span></div>
-    </div>
-    <div class="skill">
-      <h4>AI Systems</h4>
-      <div class="skill-bar"><span class="bar ai-bar"></span></div>
-    </div>
-    <div class="skill">
-      <h4>Animation</h4>
-      <div class="skill-bar"><span class="bar animation-bar"></span></div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h3><i class="fas fa-project-diagram"></i> Projects</h3>
-    <div class="projects-grid">
-      <!-- Project 1: Aksa -->
-      <div class="project-card">
-        <img src="images/aksa1.png" alt="Aksa Project">
-        <div class="project-info">
-          <h4>Aksa</h4>
-          <p>A psychological horror FPS where the player escapes symbolic puzzles in a mind-bending building.</p>
-          <button class="btn project-btn" data-project="aksa">View Details</button>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h1 class="glow-text">Hey, I'm <span class="highlight">Chhayansh Sahu</span></h1>
+                    <div class="typewriter">
+                        <p class="intro-text">
+                            — a game developer by passion, engineer by education, and bug-fixer by necessity.<br><br>
+                            I craft immersive experiences in Unity, sculpt worlds in Blender, and occasionally survive hackathons powered by caffeine and chaos.<br><br>
+                            Right now, I'm busy turning wild ideas into playable realities — one bug at a time. 🎮
+                        </p>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="hologram">
+                        <div class="hologram-inner">
+                            <div class="hologram-line"></div>
+                            <div class="hologram-line"></div>
+                            <div class="hologram-line"></div>
+                            <div class="hologram-line"></div>
+                            <div class="hologram-line"></div>
+                            <div class="hologram-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- Project 2: Sauratha -->
-      <div class="project-card">
-        <img src="images/sauratha-weapons.png" alt="Sauratha Project">
-        <div class="project-info">
-          <h4>Sauratha</h4>
-          <p>A historical RTS prototype about Maharana Pratap's life.</p>
-          <button class="btn project-btn" data-project="sauratha">View Details</button>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Core <span class="highlight">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-circle" data-percent="90">
+                        <svg class="circle-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="skill-percent">90%</div>
+                    </div>
+                    <h3>Unity</h3>
+                    <div class="skill-tooltip">Used in all game projects including College Escape and Aksa</div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-circle" data-percent="85">
+                        <svg class="circle-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="skill-percent">85%</div>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <div class="skill-tooltip">Created POD Selection and Fracture Protocol interfaces</div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-circle" data-percent="80">
+                        <svg class="circle-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="skill-percent">80%</div>
+                    </div>
+                    <h3>Blender</h3>
+                    <div class="skill-tooltip">Used for 3D modeling in Aksa and Sauratha projects</div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-circle" data-percent="75">
+                        <svg class="circle-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="skill-percent">75%</div>
+                    </div>
+                    <h3>Animation</h3>
+                    <div class="skill-tooltip">Character animations in Aksa and Endless Runner</div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-circle" data-percent="85">
+                        <svg class="circle-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="skill-percent">85%</div>
+                    </div>
+                    <h3>C#</h3>
+                    <div class="skill-tooltip">Primary programming language for all Unity projects</div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-circle" data-percent="80">
+                        <svg class="circle-chart" viewBox="0 0 36 36">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle-fill" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="skill-percent">80%</div>
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <div class="skill-tooltip">Version control for all projects and collaborations</div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+            
+            <div class="project-categories">
+                <button class="category-btn active" data-category="games">🎮 Game Projects</button>
+                <button class="category-btn" data-category="ui">🧩 UI/UX Projects</button>
+            </div>
+            
+            <div class="projects-container">
+                <!-- Game Projects -->
+                <div class="project-category active" id="games-category">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>College Escape</h3>
+                            <div class="project-tech">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>AI Systems</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                <p>A quirky escape-room style game where the player wakes up locked in a classroom. Use everyday items and your wit to break out.</p>
+                            </div>
+                            <div class="project-media">
+                                <div class="media-thumbnail" data-media="videos/CollegeGame.mp4">
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Trailer</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/CollegeEscape (1).png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 1</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/CollegeEscape (2).png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Chhayanshsahu/Horror-Game" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://yayu16.itch.io/college-escape" class="project-link" target="_blank"><i class="fas fa-gamepad"></i> Itch.io</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Aksa</h3>
+                            <div class="project-tech">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>Animation</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                <p>A psychological horror FPS set inside the mind of the protagonist. Solve abstract puzzles and face inner demons to escape.</p>
+                            </div>
+                            <div class="project-media">
+                                <div class="media-thumbnail" data-media="videos/Aksa.mp4">
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Trailer</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/aksa1.png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 1</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/aksa2.png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Chhayanshsahu/Aksa" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Endless Runner</h3>
+                            <div class="project-tech">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>AI Systems</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                <p>A 2D fast-paced runner that tests your reflexes and survival instincts.</p>
+                            </div>
+                            <div class="project-media">
+                                <div class="media-thumbnail" data-media="videos/Runner.mp4">
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Trailer</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/Runner.png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 1</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/Runner.png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link disabled" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Sauratha</h3>
+                            <div class="project-tech">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>AI Systems</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                <p>A historical RTS prototype inspired by the life of Maharana Pratap, featuring strategic gameplay and a working dialogue system.</p>
+                            </div>
+                            <div class="project-media">
+                                <div class="media-thumbnail" data-media="videos/sauratha.mp4">
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Trailer</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/sauratha1.png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 1</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/sauratha2.png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link disabled" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- UI/UX Projects -->
+                <div class="project-category" id="ui-category">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>POD Selection Menu</h3>
+                            <div class="project-tech">
+                                <span>UI/UX</span>
+                                <span>Unity</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                <p>UI system to choose different pods with real-time material customization.</p>
+                            </div>
+                            <div class="project-media">
+                                <div class="media-thumbnail" data-media="videos/OSR.mp4">
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Demo</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/OSR (1).png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 1</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/OSR (2).png">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Fracture Protocol Menu</h3>
+                            <div class="project-tech">
+                                <span>UI/UX</span>
+                                <span>Unity</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-description">
+                                <p>Sci-fi themed UI inspired by futuristic hacking interfaces.</p>
+                            </div>
+                            <div class="project-media">
+                                <div class="media-thumbnail" data-media="videos/sauratha">
+                                    <i class="fas fa-play"></i>
+                                    <span>Watch Demo</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/sauratha1">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 1</span>
+                                </div>
+                                <div class="media-thumbnail" data-media="images/sauratha2">
+                                    <i class="fas fa-image"></i>
+                                    <span>Screenshot 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:chhayanshsahu16@gmail.com">chhayanshsahu16@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Mobile</h3>
+                            <a href="tel:+918819003026">+91 8819003026</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/chhayansh-sahu-9bb845295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn – Chhayansh Sahu</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/Chhayanshsahu" target="_blank">github.com/Chhayanshsahu</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resume-download">
+                    <a href="files/ChhayanshSahu_Resume.pdf" class="resume-btn" download>
+                        <span class="btn-text">Download Resume (PDF)</span>
+                        <span class="btn-icon"><i class="fas fa-download"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Modal -->
+    <div class="media-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="media-container">
+                <video controls class="media-video" style="display:none;">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="" alt="" class="media-image" style="display:none;">
+            </div>
+        </div>
     </div>
-  </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2050 Chhayansh Sahu. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/Chhayanshsahu" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/chhayansh-sahu-9bb845295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-itch-io"></i></a>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Project Modals -->
-  <div id="aksa-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h4>Aksa</h4>
-      <video controls>
-        <source src="videos/aksa-preview.mp4" type="video/mp4">
-      </video>
-      <p><strong>Project Details:</strong> A psychological horror FPS where the player wakes up trapped in a building that's actually his mind. Solve symbolic puzzles to escape heartbreak and move on.</p>
-      <p><strong>Technologies Used:</strong> Unity, C#, Shader Graph</p>
-      <div class="project-gallery">
-        <img src="images/aksa1.png" alt="Aksa Screenshot 1">
-        <img src="images/aksa2.png" alt="Aksa Screenshot 2">
-      </div>
-      <a href="https://github.com/Chhayansh-Sahu/Aksa" class="btn" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
-  <div id="sauratha-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h4>Sauratha</h4>
-      <video controls>
-        <source src="videos/sauratha-dialogue.mp4" type="video/mp4">
-      </video>
-      <p><strong>Project Details:</strong> A historical RTS prototype where players will one day live the life of Maharana Pratap.</p>
-      <p><strong>Technologies Used:</strong> Unity, C#, AI Systems</p>
-      <div class="project-gallery">
-        <img src="images/sauratha-weapons.png" alt="Sauratha Screenshot 1">
-        <img src="images/monster.jpg" alt="Sauratha Screenshot 2">
-      </div>
-      <a href="https://github.com/Chhayansh-Sahu/Sauratha" class="btn" target="_blank">GitHub Repo</a>
-    </div>
-  </div>
-
- <!-- Contact Section -->
-<section id="contact" class="contact">
-  <h3><i class="fas fa-envelope"></i> Contact</h3>
-  <div class="contact-content" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-    
-    <!-- Phone -->
-    <p style="display: flex; align-items: center; gap: 5px;">
-      <i class="fas fa-phone"></i> +91 8819003026
-    </p>
-
-    <!-- Email -->
-    <p style="display: flex; align-items: center; gap: 5px;">
-      <i class="fas fa-envelope"></i> chhayanshsahu16@gmail.com
-    </p>
-
-    <!-- GitHub -->
-    <a href="https://github.com/Chhayansh-Sahu" target="_blank" aria-label="GitHub"
-       style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/chhayansh-sahu-9bb845295" target="_blank" aria-label="LinkedIn"
-       style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-
-  </div>
-</section>
-
-
-  <!-- Footer -->
-  <footer>
-    <p>Made with Unity crashes and caffeine <i class="fas fa-coffee"></i></p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
